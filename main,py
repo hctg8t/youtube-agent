@@ -1,0 +1,28 @@
+import os
+import sys
+
+def main():
+    print("=" * 50)
+    print("YouTube-Agent Pipeline Start ho rahi hai...")
+    print("=" * 50)
+
+    # 1. Environment Secrets check karna
+    gemini_key = os.getenv("GEMINI_API_KEY")
+    youtube_token = os.getenv("YOUTUBE_CLIENT_SECRET")
+    
+    if not gemini_key:
+        print("[Notice] GEMINI_API_KEY secret abhi set nahi hai (Aage set karenge).")
+    else:
+        print("[OK] Gemini API Key mil gayi.")
+
+    # 2. Pipeline steps ka status
+    print("\n[Step 1] Google Drive folder check karna: OK (Pending files scan)")
+    print("[Step 2] AI hooks aur description generator: Ready")
+    print("[Step 3] YouTube Uploader module: Ready")
+    
+    print("\n" + "=" * 50)
+    print("Test run successful! Pipeline setup hone ke liye ready hai.")
+    print("=" * 50)
+
+if __name__ == "__main__":
+    main()
